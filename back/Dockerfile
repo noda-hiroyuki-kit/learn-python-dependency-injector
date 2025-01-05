@@ -10,4 +10,5 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean -y \
     && sed -i -e 's/# \(ja_JP.UTF-8\)/\1/' /etc/locale.gen \
     && locale-gen \
-    && update-locale LANG=ja_JP.UTF-8
+    && update-locale LANG=ja_JP.UTF-8 \
+    && mise install

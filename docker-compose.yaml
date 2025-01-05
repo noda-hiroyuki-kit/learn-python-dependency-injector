@@ -1,0 +1,12 @@
+services:
+  back:
+    build: 
+      context: ./back
+      dockerfile: Dockerfile
+    volumes:
+      - ./back:/app
+    tty: true
+    restart: on-failure
+    working_dir: /app
+    ports:
+      - "8000:8000"

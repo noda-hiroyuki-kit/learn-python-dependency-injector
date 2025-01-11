@@ -1,7 +1,7 @@
 FROM python:slim-bullseye
 
 # Debian日本語化
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     locales \
     curl \
     && rm -rf /var/lib/apt/lists/* \

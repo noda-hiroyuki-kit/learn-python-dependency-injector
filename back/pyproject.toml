@@ -15,6 +15,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
+    "mypy>=1.14.1",
     "pytest>=8.3.4",
     "pytest-cov>=6.0.0",
     "pytest-mock>=3.14.0",
@@ -75,3 +76,27 @@ convention = "google"
 
 [tool.ruff.lint.pylint]
 max-args = 5
+
+[tool.mypy]
+# [【Python】Linter・Formatter決定版 Ruffの詳細設定](https://zenn.dev/mutex_inc/articles/4183b992ccd701)  を参考に設定
+# 基本設定
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+# サードパーティライブラリの型チェック
+ignore_missing_imports = true
+
+# 特定のモジュールの設定
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false

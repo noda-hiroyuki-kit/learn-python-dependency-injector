@@ -6,9 +6,11 @@ ENV MISE_CONFIG_DIR="/mise"
 ENV MISE_CACHE_DIR="/mise/cache"
 ENV MISE_INSTALL_PATH="/usr/local/bin/mise"
 ENV PATH="/mise/shims:$PATH"
+ENV UV_LINK_MODE=copy 
+ENV UV_COMPILE_BYTCODE=1 
 
 WORKDIR /app
-COPY mise.toml .
+COPY mise.toml pyproject.toml uv.lock ./
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -23,4 +25,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && update-locale LANG=ja_JP.UTF-8 \
     && curl https://mise.run | sh \
     && mise trust mise.toml \
-    && mise install
+    && mise install \
+    && uv sync --no-install-project

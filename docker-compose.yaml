@@ -5,8 +5,12 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./back:/app
+      - python_venv:/app/.venv
     tty: true
     restart: on-failure
     working_dir: /app
     ports:
       - "8000:8000"
+
+volumes:
+  python_venv:

@@ -1,13 +1,13 @@
 FROM python:slim-bullseye
 
 # miseの環境変数の設定
-ENV MISE_DATA_DIR="/mise"
-ENV MISE_CONFIG_DIR="/mise"
-ENV MISE_CACHE_DIR="/mise/cache"
-ENV MISE_INSTALL_PATH="/usr/local/bin/mise"
-ENV PATH="/mise/shims:$PATH"
-ENV UV_LINK_MODE=copy 
-ENV UV_COMPILE_BYTCODE=1 
+ENV MISE_DATA_DIR="/mise" \
+    MISE_CONFIG_DIR="/mise" \
+    MISE_CACHE_DIR="/mise/cache" \
+    MISE_INSTALL_PATH="/usr/local/bin/mise" \
+    UV_LINK_MODE=copy \
+    UV_COMPILE_BYTCODE=1 \ 
+    PATH="/mise/shims:$PATH"
 
 WORKDIR /app
 COPY mise.toml pyproject.toml uv.lock ./

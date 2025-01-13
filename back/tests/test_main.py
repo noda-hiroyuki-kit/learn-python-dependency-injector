@@ -7,7 +7,7 @@ main モジュールのテスト.
 from fastapi import status
 from fastapi.testclient import TestClient
 
-from src.app.main import app
+from app.main import app
 
 
 def test_read_root() -> None:
@@ -19,3 +19,18 @@ def test_read_root() -> None:
     response = client.get("/")
     assert response.status_code == status.HTTP_200_OK
     assert response.json() == {"message": "Hello World"}
+
+
+def test_get_tasks() -> None:
+    """get_tasks() should return a list of tasks.
+
+    get_tasks() はタスクのリストを返すべき.
+    """
+    client = TestClient(app)
+    response = client.get("/tasks")
+    assert response.status_code == status.HTTP_200_OK
+    assert response.json() == [
+        {"id": 1, "title": "Task 1"},
+        {"id": 2, "title": "Task 2"},
+        {"id": 3, "title": "Task 3"},
+    ]

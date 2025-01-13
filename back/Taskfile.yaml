@@ -20,4 +20,7 @@ tasks:
     cmds:
       - uv run pytest tests --cov=src --cov-report=term-missing --cov-branch
 
-
+  run:
+    desc: fastapiの起動
+    cmds:
+      - uv run uvicorn src.app.main:app --host "0.0.0.0" --reload 

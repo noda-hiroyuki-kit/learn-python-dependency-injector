@@ -72,7 +72,11 @@ docstring-code-format = true
 select = ["ALL"]
 ignore = [
     "D213",  # multi-line summary second line
+    "COM812" # missing-trailing-comma
 ]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"__init__.py" = ["E402"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"

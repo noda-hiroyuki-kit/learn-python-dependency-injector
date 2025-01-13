@@ -11,7 +11,7 @@
                 "ms-python.mypy-type-checker",
                 "streetsidesoftware.code-spell-checker",
                 "charliermarsh.ruff",
-                "njpwerner.autodocstring",
+                "njpwerner.autodocstring"
             ]
         }
     }

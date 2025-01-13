@@ -18,7 +18,7 @@ tasks:
   test:
     desc: テストの実行
     cmds:
-      - uv run pytest tests --cov=src --cov-report=term-missing --cov-branch
+      - uv run pytest tests --cov=src --cov-report=html --cov-branch
 
   run:
     desc: fastapiの起動

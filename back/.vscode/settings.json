@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "abstractmethod",
         "anyio",
         "BYTCODE",
         "certifi",
@@ -28,6 +29,7 @@
         "pytest",
         "pytype",
         "pyyaml",
+        "repr",
         "sdist",
         "sniffio",
         "starlette",

@@ -6,7 +6,7 @@
 
 from abc import ABC, abstractmethod
 
-from app.models.task import Task
+from app.domain.task.task import Task
 
 
 class TaskRepository(ABC):

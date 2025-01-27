@@ -4,8 +4,8 @@
 このモジュールは, FakeTaskRepositoryクラスを定義.
 """
 
-from app.models.task import Task
-from app.models.task_repository import TaskRepository
+from app.domain.task.task import Task
+from app.domain.task.task_repository import TaskRepository
 
 
 class FakeTaskRepository(TaskRepository):

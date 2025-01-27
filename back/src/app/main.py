@@ -9,9 +9,9 @@ from typing import Annotated
 
 from fastapi import Depends, FastAPI
 
-from app.fake.fake_task_repository import FakeTaskRepository
-from app.models.task import Task
-from app.models.task_repository import TaskRepository
+from app.domain.task.task import Task
+from app.domain.task.task_repository import TaskRepository
+from app.infrastructure.fake.fake_task_repository import FakeTaskRepository
 
 app = FastAPI()
 

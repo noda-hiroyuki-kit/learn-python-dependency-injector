@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # test_main.py
 """tests for main module.
 
